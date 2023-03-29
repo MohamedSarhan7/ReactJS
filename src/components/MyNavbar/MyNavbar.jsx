@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-import { Outlet, Link } from "react-router-dom";
 export default class MyNavbar extends Component {
     render() {
         return (
@@ -15,7 +14,6 @@ export default class MyNavbar extends Component {
                         <Nav className="ms-auto">
                             <Nav.Link href={`/`}>Home</Nav.Link>
                             <Nav.Link href={`/task1`}>Task1</Nav.Link>
-                            <Nav.Link href={`/task2`}>Task2</Nav.Link>
                             <Nav.Link href="#link">About us</Nav.Link>
                             
                         </Nav>

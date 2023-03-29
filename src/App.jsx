@@ -11,18 +11,15 @@ function App() {
   const [search, setSearch] = useState('')
   const [arr, setArr] = useState([...ProductsArray])
 
-  let filteredBy = () => {
-    let temp = ProductsArray.filter(item => item.name.includes(search))
-    setArr([...temp]);
-  }
 
   let getSearch = (data) => {
     setSearch(data)
+
   }
 
   useEffect(() => {
-    filteredBy();
-
+    let temp = ProductsArray.filter(item => item.name.includes(search))
+    setArr([...temp]);
   }, [search])
 
 

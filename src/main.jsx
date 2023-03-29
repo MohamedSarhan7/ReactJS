@@ -5,7 +5,6 @@ import './index.css'
 import MyNavbar from './components/MyNavbar/MyNavbar'
 import MyFooter from './components/MyFooter/MyFooter'
 import Task1 from './components/Day2/Task1/Task1'
-import Task2 from './components/Day2/Task2/Task2'
 
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
@@ -18,10 +17,7 @@ const router = createBrowserRouter([
     path: "/task1",
     element: <Task1 />,
   },
-  {
-    path: "/task2",
-    element: <Task2 />,
-  },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -29,5 +25,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <MyNavbar></MyNavbar>
     <RouterProvider router={router} />
     <MyFooter></MyFooter>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
