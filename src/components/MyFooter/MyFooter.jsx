@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 export default class MyFooter extends Component {
     render() {
         return (
-            <div className='bg-dark text-light  px-5 '>
-                <footer className="py-5 ">
+            <div className='bg-dark text-light  px-5  '  >
+                <footer className="py-5  ">
                     <div className="row">
                         <div className="col-2">
                             <h5>Section</h5>
