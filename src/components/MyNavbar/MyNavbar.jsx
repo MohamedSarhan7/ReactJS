@@ -13,7 +13,7 @@ export default class MyNavbar extends Component {
                     <Navbar.Collapse id="basic-navbar-nav" >
                         <Nav className="ms-auto">
                             <Nav.Link href={`/`}>Home</Nav.Link>
-                            <Nav.Link href={`/task1`}>Task1</Nav.Link>
+                            <Nav.Link href={`/products/0/edit`}>New Product</Nav.Link>
                             <Nav.Link href="#link">About us</Nav.Link>
                             
                         </Nav>

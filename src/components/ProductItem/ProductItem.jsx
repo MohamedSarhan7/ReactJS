@@ -1,16 +1,37 @@
-import React, { Component } from 'react'
+
+import React, { useState,useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './ProductItem.css'
-export default class ProductItem extends Component {
-    render() {
-        const product = this.props.product
+import { productsAPI } from '../../API/Products'
+import { useNavigate,useParams } from 'react-router-dom';
 
-        return (
+export default function ProductItem() {
+    // useNavigate()
+    const { id } = useParams();
+    const [product, setproduct] = useState({})
+    let getProduct = async () => {
+        try {
+            let response = await productsAPI.getProductById(id);
+            // console.log(response)
+            setproduct({...response.data})
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        getProduct();
+    }, [])
+
+    return (
+        <div className='d-flex justify-content-center'>
+
             <div className='col-lg-4 col-md-6 col-sm-12  p-4 product'>
 
                 <Card className='h-100' >
-                    <Card.Img className='h-lg-50 h-50' variant="top" src={product.imageURL.toString()} />
+                    <Card.Img className='h-lg-50 h-50' variant="top" src={product.imageURL} />
                     <Card.Body className='h-lg-50 h-50' >
                         <div className='d-flex justify-content-around'>
                             <Card.Title>{product.name} </Card.Title>
@@ -27,6 +48,6 @@ export default class ProductItem extends Component {
                     </Card.Body>
                 </Card>
             </div>
-        )
-    }
+        </div>
+    )
 }
